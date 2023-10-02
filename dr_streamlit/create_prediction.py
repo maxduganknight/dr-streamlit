@@ -33,7 +33,7 @@ def get_prediction_features(project_id: str, deployment_id: str) -> List[Dict[st
         if Deployment(deployment_id).get_association_id_settings()['required_in_prediction_requests']==True:
             association_id_column = Deployment(deployment_id).get_association_id_settings()['column_names'][0]
             record = {
-                'name': ASSOCIATION_ID,
+                'name': association_id_column,
                 'feature_type': 'Numeric',
                 'date_format': None,
                 'min': 0,
